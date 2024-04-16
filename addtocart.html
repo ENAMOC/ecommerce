@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .product {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .product:hover {
+    transform: translateY(-5px);
+  }
+
+  .product img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+  }
+
+  .product-info {
+    padding: 20px;
+  }
+
+  .product h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .product span {
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #888;
+  }
+
+  .product button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .product button:hover {
+    background-color: #0056b3;
+  }
+
+  #cart {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  #cart h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+  }
+
+  #cart-items {
+    margin-bottom: 10px;
+  }
+
+  #checkout-btn {
+    background-color: #28a745;
+  }
+
+  #checkout-btn:hover {
+    background-color: #218838;
+  }
+
+  #payment {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  #payment h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+  }
+
+  #payment form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  #payment form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #payment form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #payment form button:hover {
+    background-color: #0056b3;
+  }
+
+.checkit .btn_check {
+  display: inline-block;
+  padding: 10px 40px;
+  background: peachpuff;
+  color: teal;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: all .50s ease;
+  cursor: pointer;
+}
+
+.checkit .btn_check:hover {
+  transform: translateX(10px);
+  border: 2px solid;
+  background: peachpuff;
+  color: teal;
+}
+
+.checkit  a {
+  text-decoration: none;
+}
+
+.checkit {
+  padding: 50px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Shop Our Collection</h2>
+
+  <div class="product-grid">
+    <div class="product">
+      <img src="../chair/chair1.jpg" alt="Product 1">
+      <div class="product-info">
+        <h3>dah voujun chair</h3>
+        <span id="a">P26,000.00</span>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+
+    
+    <div class="product">
+  <img src="../chair/chair1.jpg" alt="Product 1">
+  <h3>Description</h3>
+  <h3>dah voujun chair</h3>
+  <span id="a">P26,000.00</span>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="../chair/chair2.jpg" alt="Product 2">
+  <h3>Description</h3>
+  <h3>Australian Sofa</h3>
+  <span id="b">P52,000.00</span>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="../chair/chair3.jpg" alt="Product 1">
+  <h3>Description</h3>
+  <h3>Mercere Demere Chair</h3>
+  <span id="c">P45,000.00</span>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="../chair/chair4.jpg" alt="Product 2">
+  <h3>Description</h3>
+  <h3>Octavian Frost Chair</h3>
+  <span id="d">P62,000.00</span>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="../chair/chair5.jpg" alt="Product 1">
+  <h3>Description</h3>
+  <h3>Dag DayBed Chair</h3>
+  <span id="e">P21,000.00</span>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="../chair/chair6.jpg" alt="Product 2">
+  <h3>Description</h3>
+  <h3>Mia velvet Chair</h3>
+  <span id="f">P32,000.00</span>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="../chair/chair7.jpg" alt="Product 1">
+  <h3>Description</h3>
+  <h3>Julia swede chair</h3>
+  <span id="g">P18,000.00</span>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="../chair/chair8.jpg" alt="Product 2">
+  <h3>Description</h3>
+  <h3>Dynamic Hallway chair</h3>
+  <span id="h">P68,000.00</span>
+  <button>Add to Cart</button>
+</div>
+
+    
+  </div>
+  
+  
+  <div class="checkit">
+         <a href="../index.html" class="btn_check">BACK</a>
+       </div>
+  
+  
+  
+  
+
+  <div id="cart">
+    <h2>Your Ca</h2>
+    <div id="cart-items"></div>
+    <button id="checkout-btn">Proceed to Checkout</button>
+  </div>
+
+  <div id="payment">
+    <h2>Payment</h2>
+    <form id="payment-form">
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" name="card-number" required>
+      <br>
+      <label for="expiration-date">Expiration Date:</label>
+      <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YYYY" required>
+      <br>
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" maxlength="3" required>
+      <br>
+      <label for="cardholder-name">Cardholder Name:</label>
+      <input type="text" id="cardholder-name" name="cardholder-name" required>
+      <br>
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const addToCartButtons = document.querySelectorAll('.product button');
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartDiv = document.getElementById('cart');
+  const paymentDiv = document.getElementById('payment');
+  const checkoutButton = document.getElementById('checkout-btn');
+  let totalPrice = 0; // Initialize total price variable
+
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const product = this.closest('.product');
+      const productName = product.querySelector('h3').innerText;
+      const productPrice = parseFloat(product.querySelector('span').innerText.replace('P', '').replace(',', ''));
+
+      // Add product price to the total
+      totalPrice += productPrice;
+
+      // Update the cart UI with product name and price
+      cartItemsContainer.innerHTML += `<div>${productName} - ${productPrice}</div>`;
+      cartDiv.style.display = 'block';
+
+      // Update the checkout button text with the total price
+      checkoutButton.innerText = `Proceed to Checkout - Total: P${totalPrice.toFixed(2)}`;
+    });
+  });
+
+  checkoutButton.addEventListener('click', function() {
+    // Here you can implement logic to proceed to the payment process
+    // For this example, let's just show the payment form
+    paymentDiv.style.display = 'block';
+  });
+
+  // Add event listener to the payment form submission
+  document.getElementById('payment-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Here you can implement the logic for payment processing
+    // For demonstration purposes, let's show an alert message
+    alert('Payment successful!');
+
+    // You can redirect to a thank you page or perform other actions here
+
+    // For this example, let's hide the payment form after successful payment
+    paymentDiv.style.display = 'none';
+
+    // Clear the cart items and reset total price
+    cartItemsContainer.innerHTML = '';
+    totalPrice = 0;
+    checkoutButton.innerText = 'Proceed to Checkout';
+    cartDiv.style.display = 'none';
+  });
+});
+</script>
+
+</body>
+</html>
+
+     

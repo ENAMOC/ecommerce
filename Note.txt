@@ -1,0 +1,9 @@
+    <div class="slogan">
+        <img src="image/logo.png" alt="logo">
+      <h1>FALL IN LOVE</h1>
+      <p>with the details
+      of your <br><span>HOME</span></p>
+       <div class="checkit">
+         <a href="main.php" class="btn_check">CHECK IT NOW!</a>
+       </div>
+    </div>
